@@ -1,10 +1,9 @@
+'use strict';
 
-var time = require('time');
+// A simple hello world Lambda function
 exports.handler = (event, context, callback) => {
-    var currentTime = new time.Date(); 
-    currentTime.setTimezone("America/Los_Angeles");
-    callback(null, {
-        statusCode: '200',
-        body: 'The time in Los Angeles is: ' + currentTime.toString(),
-    });
-};
+
+    console.log('LOG: Name is ' + event.name);
+    callback(null, "Hello " + event.name);
+
+}
